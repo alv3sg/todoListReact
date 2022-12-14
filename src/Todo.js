@@ -19,12 +19,22 @@ function Todo(){
         setItems(filteredItems)
     
     }
+    function onItemChecked(item){        
+        //recebendo um item que vai ser alterado
+        let updateditems = items.map(it => {
+            if(it.id === item.id){
+                item.done = !item.done
+            }
+            return it;
+        })
+        setItems(updateditems)        
+    }
     
     return (
     <div className="container">
         <h1>Todo</h1>
         <TodoForm onAddItem={onAddItem}></TodoForm>
-        <List onItemDelleted={onItemDelleted} items={items}></List>        
+        <List onItemDelleted={onItemDelleted} onItemChecked={onItemChecked} items={items}></List>        
     </div>
     )
 }

@@ -4,10 +4,12 @@ function List(props){
     
     return(
         <ul>
-            {props.items.map(item => <li key={item.id}>
+            {props.items.map(item => <li className={item.done ? "done" : ""} key={item.id}>
                 {item.text}
                 <button onClick={()=>{props.onItemDelleted(item)}}>DEL</button>
-            </li>)}
+                <input type="checkbox" onClick={()=>{props.onItemChecked(item)}}></input>
+                
+            </li>)} 
         </ul>
     )
 }
