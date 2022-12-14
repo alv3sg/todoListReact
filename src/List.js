@@ -1,11 +1,11 @@
 import "./Todo.css"
-
+//recebdno um array de objetos, utilizando map para mapear e criar uma lista com seus itens
 function List(props){
     return(
         <ul>
-            {props.items.map(item => <li>{item}</li>)}
+            {props.items.map(item => <li key={item.id}>{item.text}</li>)}
         </ul>
     )
-}//utilizando a funcao map para mapear os itens do array items e cada item retornar dentro de um lista
+}
 
 export default List;

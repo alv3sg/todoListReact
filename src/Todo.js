@@ -1,13 +1,16 @@
 import React, { useState } from "react"
 import List from "./List"
 import TodoForm from "./TodoForm"
+import Item from "./Item"
 import "./Todo.css"
 function Todo(){    
     const [items, setItems] = useState([])
 
-    function onAddItem(item){
-        setItems([...items, item])
-        //receber estado de um filho atraves de uma funcao 
+    function onAddItem(text){
+        //receber estado de um filho atraves de uma funcao
+        let it = new Item(text)
+        //recebendo um objt
+        setItems([...items, it])         
     }
     
     return (
